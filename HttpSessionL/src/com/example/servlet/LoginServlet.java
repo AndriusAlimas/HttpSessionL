@@ -19,7 +19,11 @@ public class LoginServlet extends HttpServlet {
         HttpSession httpSession = request.getSession();
         // invoking from session scope setAttribute from session:
         httpSession.setAttribute("userName", userName);
-        
+        ServletContext servletContext = getServletContext();
+        int total_user = (Integer)servletContext.getAttribute("totalUsers");
+        int current_user = (Integer)servletContext.getAttribute("currentUsers");
+        out.println("<br>TOTAL USERS: " + total_user);
+        out.println("<br>CURRENT USERS: " + current_user);
         // simple hyperlink to another servlet:
         out.println("<br><a href='logout.do'>logout</a>");
         out.println("</body></html>");
