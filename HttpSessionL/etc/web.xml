@@ -9,6 +9,9 @@ xmlns="http://xmlns.jcp.org/xml/ns/javaee"
     <welcome-file>index.html</welcome-file>
   </welcome-file-list>
   
+  <listener>
+  	<listener-class>com.example.listener.MyHttpSessionListener</listener-class>
+  </listener>
   <servlet>
   	<servlet-name>Login</servlet-name>
   	<servlet-class>com.example.servlet.LoginServlet</servlet-class>
